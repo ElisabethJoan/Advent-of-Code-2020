@@ -4,13 +4,16 @@ input = digestInput("day3input.txt")
 treeDelim = "#"
 
 
-def solution(slope):
+def solution(slope, x, y):
     treeCount = 0
     for i in range(1, len(slope)):
-        if slope[i][(3 * i) % len(slope[0])] == treeDelim:
-            treeCount += 1
+        try:
+            if slope[i * y][(x * i) % len(slope[0])] == treeDelim:
+                treeCount += 1
+        except:
+            return treeCount
     return treeCount
 
 
-x = solution(input)
+x = solution(input, 3, 1)
 print(x)
