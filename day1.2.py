@@ -1,6 +1,6 @@
 from aoc2020lib import digestInput
 
-input = digestInput("day1input.txt")
+input = [int(x) for x in digestInput("day1input.txt")]
 target = 2020
 
 
