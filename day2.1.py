@@ -13,5 +13,6 @@ def solution():
             counter += 1
     return counter
 
+
 x = solution()
 print(x)
