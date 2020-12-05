@@ -1,9 +1,9 @@
 from aoc2020lib import digestInput
 from day3_1 import solution as problem1
 
-
 input = digestInput("day3input.txt")
 treeDelim = "#"
+
 
 def solution():
     prod = 1
