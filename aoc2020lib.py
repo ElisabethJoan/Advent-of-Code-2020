@@ -33,4 +33,17 @@ def processInput(input):
     return classList
 
 
-#DAY 3
+#DAY 4
+def d4processInput(input):
+    coutner = 0
+    passports = []
+    tempDict = {}
+    for i in range(len(input)):
+        if input[i] == "" or i + 1 == len(input):
+            passports.append(tempDict)
+            if i + 1 == len(input):
+                tempDict.update(dict(x.split(":") for x in input[i].split(" ")))
+            tempDict = {}
+            continue
+        tempDict.update(dict(x.split(":") for x in input[i].split(" ")))
+    return passports

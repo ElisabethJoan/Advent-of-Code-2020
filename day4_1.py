@@ -1,24 +1,11 @@
-from aoc2020lib import digestInput
+from aoc2020lib import digestInput, d4processInput
 
 input = digestInput("day4input.txt")
 requiredDelims = set(["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"])
-passports = []
-temp = []
 
-def processInput():
-    coutner = 0
-    tempDict = {}
-    for i in range(len(input)):
-        if input[i] == "" or i + 1 == len(input):
-            passports.append(tempDict)
-            if i + 1 == len(input):
-                tempDict.update(dict(x.split(":") for x in input[i].split(" ")))
-            tempDict = {}
-            continue
-        tempDict.update(dict(x.split(":") for x in input[i].split(" ")))
 
 def solution():
-    processInput()
+    passports = d4processInput(input)
     counter = 0
     for i in passports:
         if requiredDelims.issubset(i.keys()):
